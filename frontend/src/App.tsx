@@ -28,17 +28,23 @@ function App() {
 	}
 
 	return (
-		<div className="flexy">
-			<div className="leftMenu">
-				<h2>Posts</h2>
-				{posts.map((post: any) => (
-					<div className="pointy" onClick={() => handleGetPost(post)}>
-						{post}
-					</div>
-				))}
-			</div>
-			<div className="stage">
-				<div dangerouslySetInnerHTML={{ __html: post }} />
+		<div className="base">
+			<header className="header">
+				<h1>Jotter - No Frills Blogging Platform</h1>
+			</header>
+			<div className="bar"></div>
+			<div className="flexy">
+				<div className="leftMenu">
+					<h2>Posts</h2>
+					{posts.map((post: any) => (
+						<div className="pointy" onClick={() => handleGetPost(post)}>
+							{post}
+						</div>
+					))}
+				</div>
+				<div className="stage">
+					<div dangerouslySetInnerHTML={{ __html: post }} />
+				</div>
 			</div>
 		</div>
 	);

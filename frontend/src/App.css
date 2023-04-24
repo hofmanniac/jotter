@@ -37,13 +37,41 @@
   }
 }
 
+.base {
+  background-color: rgb(61, 61, 61);
+  color: antiquewhite;
+}
+
+.header {
+  background-color: rgb(27, 109, 176);
+  color: antiquewhite;
+  margin-top: 0;
+  padding-top: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 75px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.bar {
+  background-color: black;
+  color: antiquewhite;
+  margin-top: 0;
+  padding-top: 0;
+  padding-left: 10px;
+  height: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
 .pointy {
   cursor: pointer
 }
 
 .flexy {
-    background-color: black;
-    color: antiquewhite;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -52,13 +80,13 @@
 
 .leftMenu {
   width: 25%;
-  min-height: 100vh;
-  background-color: black;
+  min-height: 85vh;
+  background-color: rgb(37, 37, 37);
   padding: 10px
 }
 
 .stage {
   width: 75%;
-	min-height: 100vh;
+	min-height: 85vh;
 	padding: 10px
 }
