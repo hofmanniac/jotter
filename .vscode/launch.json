@@ -9,8 +9,8 @@
 			"type": "node",
 			"request": "launch",
 			"runtimeExecutable": "npm",
-			"cwd": "${workspaceFolder}/frontend",
-			"args": ["start"]
+			"runtimeArgs": ["run-script", "start"],
+			"cwd": "${workspaceFolder}/frontend"
 		},
 		{
 			"name": "Backend",

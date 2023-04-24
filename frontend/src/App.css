@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+
+.pointy {
+  cursor: pointer
+}
+
+.flexy {
+    background-color: black;
+    color: antiquewhite;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start
+  }
+
+.leftMenu {
+  width: 25%;
+  min-height: 100vh;
+  background-color: black;
+  padding: 10px
+}
+
+.stage {
+  width: 75%;
+	min-height: 100vh;
+	padding: 10px
+}

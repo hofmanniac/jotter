@@ -1,26 +1,45 @@
+import React from "react";
 import "./App.css";
 
-function getHello() {
-	fetch("/api/hello")
-		.then((response) => response.json())
-		.then((data) => {
-			console.log(data.message);
-		})
-		.catch((error) => console.error(error));
-}
-
-function handleClick() {
-	getHello();
-}
-
 function App() {
+	const [posts, setPosts] = React.useState([]);
+	const [post, setPost] = React.useState("");
+
+	function getPosts() {
+		fetch("/api/posts")
+			.then((response) => response.json())
+			.then((data) => {
+				setPosts(data);
+			})
+			.catch((error) => console.error(error));
+	}
+
+	React.useEffect(() => {
+		getPosts();
+	}, []);
+
+	function handleGetPost(post: string) {
+		fetch("/api/post/" + post)
+			.then((response) => response.text())
+			.then((data) => {
+				setPost(data);
+			})
+			.catch((error) => console.error(error));
+	}
+
 	return (
-		<div className="App">
-			<header className="App-header">
-				<div>
-					<button onClick={handleClick}>Say Hello from the Backend...</button>
-				</div>
-			</header>
+		<div className="flexy">
+			<div className="leftMenu">
+				<h2>Posts</h2>
+				{posts.map((post: any) => (
+					<div className="pointy" onClick={() => handleGetPost(post)}>
+						{post}
+					</div>
+				))}
+			</div>
+			<div className="stage">
+				<div dangerouslySetInnerHTML={{ __html: post }} />
+			</div>
 		</div>
 	);
 }
